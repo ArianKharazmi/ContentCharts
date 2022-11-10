@@ -11,6 +11,8 @@ import pandas as pd
 from pandas.io.json import json_normalize
 
 
+
+
 today = date.today()
 
 
@@ -24,11 +26,30 @@ sidebar_selection = st.sidebar.radio(
 
 
 sidebar_selection = st.sidebar.radio(
-    'Select location data to display:',
-    ['Show All', 'Show Apple Music', 'Show iTunes Store (Music)', 'Show App Store'],
+    'Select music platform chart data to display:',
+    ['Show All', 'Show Apple Music', 'Show iTunes Store (Music)'],
+)
+
+sidebar_selection = st.sidebar.radio(
+    'Select movie platform chart data to display:',
+    ['Show All', 'Show iTunes Store (Movies/AppleTV)'],
+)
+
+sidebar_selection = st.sidebar.radio(
+    'Select podcast platform chart data to display:',
+    ['Show All', 'Show Apple Podcasts'],
+)
+
+sidebar_selection = st.sidebar.radio(
+    'Select app platform chart data to display:',
+    ['Show All', 'Show App Store'],
 )
 
 
+#sidebar_selection = st.sidebar.radio(
+    #'Select location data to display:',
+    #['Show All', 'Show Apple Music', 'Show iTunes Store (Music)', 'Show App Store',
+# 'Show iTunes Store (Movies)(Apple TV), 'Show iTunes Store (TV Shows)(Apple TV)],)
 
 
 # Apple Music (United States)
@@ -45,6 +66,9 @@ def get_data():
     return playedsongs, playedalbums, playedplaylists, playedmvs
 
 playedsongs, playedalbums, playedplaylists, playedmvs = get_data()
+
+
+
 
 print("Apple Music Charts (Top 100)")
 print("Top songs actively played " + str(playedsongs))
@@ -69,6 +93,8 @@ def get_data():
     topmvs = pd.read_json(Top_mvs)
 
     return topsongs, topalbums, topmvs
+
+
 
 topsongs, topalbums, topmvs = get_data()
 print("iTunes Store Music Charts (Top 100)")
@@ -99,3 +125,42 @@ print("Top paid apps actively purchased " + str(toppaid))
 st.header("App Store Charts (Top 100)")
 st.subheader("**Top free apps actively downloaded** " + str(topfree))
 st.subheader("**Top paid apps actively purchased** " + str(toppaid))
+
+
+# iTunes Store Movies (AppleTV) (United States)
+def get_data():
+    Top_movies = 'https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json'
+    topmovies = pd.read_json(Top_movies)
+
+    return topmovies
+topmovies = get_data()
+print("iTunes Store Movies (AppleTV) Charts (Top 100)")
+print("Top movies actively purchased " + str(topmovies))
+
+
+st.header("iTunes Store Movies (AppleTV) Charts (Top 100)")
+st.subheader("**Top movies actively purchased** " + str(topmovies))
+
+
+# Apple Podcasts (United States)
+def get_data():
+    Top_podcasts = 'https://rss.applemarketingtools.com/api/v2/us/podcasts/top/100/podcasts.json'
+    toppodcasts = pd.read_json(Top_podcasts)
+    Top_podeps = 'https://rss.applemarketingtools.com/api/v2/us/podcasts/top/100/podcast-episodes.json'
+    toppodeps = pd.read_json(Top_podeps)
+    Top_podsubs = 'https://rss.applemarketingtools.com/api/v2/us/podcasts/top-subscriber/50/podcast-channels.json'
+    toppodsubs = pd.read_json(Top_podsubs)
+
+
+    return toppodcasts, toppodeps, toppodsubs
+
+toppodcasts, toppodeps, toppodsubs = get_data()
+print("Apple Podcasts Charts (Top 100)")
+print("Top podcasts actively listened to " + str(toppodcasts))
+print("Top podcast episodes actively listened to " + str(toppodeps))
+print("Top podcasts actively subscribed to " + str(toppodsubs))
+
+st.header("Apple Podcasts Charts (Top 100)")
+st.subheader("**Top podcasts actively listened to** " + str(toppodcasts))
+st.subheader("Top podcast episodes actively listened to " + str(toppodeps))
+st.subheader("Top podcasts actively subscribed to " + str(toppodsubs))
