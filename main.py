@@ -10,12 +10,9 @@ import json
 import pandas as pd
 from pandas.io.json import json_normalize
 
-
-
-
 today = date.today()
-
-
+print(date)
+st.write(date)
 
 st.title('ContentCharts Web-Application')
 
@@ -129,7 +126,7 @@ st.subheader("**Top paid apps actively purchased** " + str(toppaid))
 
 # iTunes Store Movies (AppleTV) (United States)
 def get_data():
-    Top_movies = 'https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json'
+    Top_movies = 'https://itunes.apple.com/us/rss/topmovies/limit=100/explicit=true/json'
     topmovies = pd.read_json(Top_movies)
 
     return topmovies
