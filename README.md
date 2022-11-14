@@ -7,9 +7,9 @@ This was made to further familiarize myself with the Python language and the Str
 *ContentCharts v1.1.1 (Alpha) can run through your IDE or accessed via the streamlit webpage.*
 
 
-# Streamlit Webapge:** https://ariankharazmi-contentcharts-web-application-main-btes6f.streamlit.app/
+# Streamlit Webapge: --->** https://ariankharazmi-contentcharts-web-application-main-btes6f.streamlit.app/
 
-**v1.1.1 (Alpha) Proof of Concept Images:**
+# **v1.1.1 (Alpha) Proof of Concept Images:**
 
 # Apple Music Feed
 ![Screenshot 2022-11-14 172208](https://user-images.githubusercontent.com/100003892/201781443-7e552ec6-a7de-4446-ba48-0964b2ab0883.png)
