@@ -7,13 +7,14 @@ This was made to further familiarize myself with the Python language and the Str
 *ContentCharts v1.1.2 (Alpha) can run through your IDE or accessed via the streamlit webpage.*
 
 
-# Streamlit Webpage: ---> https://ariankharazmi-contentcharts-web-application-main-btes6f.streamlit.app/
+# Streamlit Webpage: ---> https://ariankharazmi-contentcharts-web-application-main-mj8coh.streamlit.app/
 
-# **v1.1.1 (Alpha) Proof of Concept Images:**
+# **v1.1.2 (Alpha) Proof of Concept Images:**
 
 # Apple Music Feed
-![Screenshot 2022-11-14 172208](https://user-images.githubusercontent.com/100003892/201781443-7e552ec6-a7de-4446-ba48-0964b2ab0883.png)
+![Screenshot 2022-11-14 182440](https://user-images.githubusercontent.com/100003892/201788907-cca9cece-38ae-4ce4-aa8c-f9549e6ad386.png)
 # iTunes Store (Music) Feed
-![Screenshot 2022-11-14 172243](https://user-images.githubusercontent.com/100003892/201781450-162981d6-e81d-4394-9c5c-086e219dee9a.png)
+![Screenshot 2022-11-14 182508](https://user-images.githubusercontent.com/100003892/201788925-f105e61a-e424-4932-b824-f7e649969223.png)
 # Apple Podcasts Feed
-![Screenshot 2022-11-14 172314](https://user-images.githubusercontent.com/100003892/201781457-82154b6c-96f0-4b4a-b820-3d55b7be3c73.png)
+![Screenshot 2022-11-14 182527](https://user-images.githubusercontent.com/100003892/201788936-ec30cfd4-2fd1-48ef-b12a-6698aa5e35ac.png)
+
