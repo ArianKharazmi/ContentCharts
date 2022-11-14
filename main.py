@@ -10,9 +10,10 @@ import json
 import pandas as pd
 from pandas.io.json import json_normalize
 
+ts = int(time.time())
 today = date.today()
-print(date)
-st.write(date)
+print(today)
+st.write(today)
 
 st.title('ContentCharts Web-Application')
 
@@ -24,22 +25,22 @@ sidebar_selection = st.sidebar.radio(
 
 sidebar_selection = st.sidebar.radio(
     'Select music platform chart data to display:',
-    ['Show All', 'Show Apple Music', 'Show iTunes Store (Music)'],
+    ['Show All', 'Show Apple Music', 'Show iTunes Store (Music)', 'Show none'],
 )
 
 sidebar_selection = st.sidebar.radio(
     'Select movie platform chart data to display:',
-    ['Show All', 'Show iTunes Store (Movies/AppleTV)'],
+    ['Show All', 'Show iTunes Store (Movies/AppleTV)', 'Show none'],
 )
 
 sidebar_selection = st.sidebar.radio(
     'Select podcast platform chart data to display:',
-    ['Show All', 'Show Apple Podcasts'],
+    ['Show All', 'Show Apple Podcasts', 'Show none'],
 )
 
 sidebar_selection = st.sidebar.radio(
     'Select app platform chart data to display:',
-    ['Show All', 'Show App Store'],
+    ['Show All', 'Show App Store', 'Show none'],
 )
 
 
