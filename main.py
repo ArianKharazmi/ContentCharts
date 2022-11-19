@@ -9,6 +9,8 @@ import base64
 import json
 import pandas as pd
 from pandas.io.json import json_normalize
+import feedparser
+
 
 ts = int(time.time())
 today = date.today()
@@ -42,6 +44,36 @@ sidebar_selection = st.sidebar.radio(
     'Select app platform chart data to display:',
     ['Show All', 'Show App Store', 'Show none'],
 )
+
+
+
+
+dir(feedparser)
+
+f = feedparser.parse("https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json")
+f.keys()
+f.headers
+f.feed
+f.entries
+len(f.entries)
+for entry in f.entries:
+    print(entry.title)
+
+for entry in f.entries:
+    print("im:name".entry.title)
+
+f = feedparser.parse("https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/songs.json")
+f.keys()
+f.headers
+f.feed
+f.entries
+len(f.entries)
+for entry in f.entries:
+    print(entry.title)
+
+for entry in f.entries:
+    print("artistName".entry.title)
+f.entries[0]
 
 
 #sidebar_selection = st.sidebar.radio(
