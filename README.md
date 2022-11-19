@@ -1,15 +1,15 @@
-# ContentCharts v1.1.2 (Alpha)
+# ContentCharts v1.1.3 (Alpha)
 A program that gathers various content/media platform's chart data and employs its statistics onto an easy-to-understand Streamlit webpage. 
 You can use the program to see what content/media is currently popular on a platform.
 This is the first version, and is a work-in-progress, it will be further updated as more, major changes are made.
 This was made to further familiarize myself with the Python language and the Streamlit service. 
 
-*ContentCharts v1.1.2 (Alpha) can run through your IDE or accessed via the streamlit webpage.*
+*ContentCharts v1.1.3 (Alpha) can run through your IDE or accessed via the streamlit webpage.*
 
 
-# Streamlit Webpage: ---> [ContentCharts-Web-Application v1.1.2](https://ariankharazmi-contentcharts-web-application-main-mj8coh.streamlit.app/)
+# Streamlit Webpage: ---> [ContentCharts-Web-Application v1.1.3](https://ariankharazmi-contentcharts-web-application-main-mj8coh.streamlit.app/)
 
-# **v1.1.2 (Alpha) Proof of Concept Images:**
+# **v1.1.3 (Alpha) Proof of Concept Images:**
 
 # Apple Music Feed
 ![Screenshot 2022-11-14 182440](https://user-images.githubusercontent.com/100003892/201788907-cca9cece-38ae-4ce4-aa8c-f9549e6ad386.png)
