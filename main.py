@@ -17,9 +17,10 @@ import xml.etree.ElementTree as ET
 ts = int(time.time())
 today = date.today()
 print(today)
-st.write(today)
 
 st.title('ContentCharts Web-Application')
+st.write(today)
+st.write(today)
 
 sidebar_selection = st.sidebar.radio(
     'Select location data to display:',
