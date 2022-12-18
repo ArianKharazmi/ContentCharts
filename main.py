@@ -19,7 +19,7 @@ today = date.today()
 print(today)
 
 st.title('ContentCharts Web-Application')
-st.write("""You are visiting ContentCharts on: """ + today)
+st.write("""You are visiting ContentCharts on: """)
 st.write(today)
 st.write("""A program that gathers various content/media platform's chart data and employs its statistics onto an easy-to-understand Streamlit webpage. 
          You can use the program to see what content/media is currently popular on a platform. 
@@ -54,19 +54,19 @@ sidebar_selection = st.sidebar.radio(
 
 
 rss_urls = [
-    # AM Most Played Songs
+    # Apple Music Most Played Songs
     'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/songs.json'
-    # AM Most Played Albums
+    # Apple Music Most Played Albums
     'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/albums.json'
-    # AM Most Played Playlists
+    # Apple Music Most Played Playlists
     'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/playlists.json'
-    # AM Most Played Music Videos
+    # Apple Music Most Played Music Videos
     'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/music-videos.json'
-    # iTunes Most Actively Bought Songs
+    # iTunes Store Most Actively Purchased Songs
     'https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json'
-    # iTunes Most Actively Bought Albums
+    # iTunes Store Most Actively Purchased Albums
     'https://itunes.apple.com/us/rss/topalbums/limit=100/explicit=true/json'
-    # iTunes Most Actively Bought Music Videos
+    # iTunes Store Most Actively Purchased Music Videos
     'https://itunes.apple.com/us/rss/topmusicvideos/limit=100/explicit=true/json'
 
 
