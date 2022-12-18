@@ -19,7 +19,8 @@ today = date.today()
 print(today)
 
 st.title('ContentCharts Web-Application')
-st.write("""You are visiting on """ + today)
+st.write("""You are visiting ContentCharts on: """)
+st.write(today)
 st.write("""A program that gathers various content/media platform's chart data and employs its statistics onto an easy-to-understand Streamlit webpage. 
          You can use the program to see what content/media is currently popular on a platform. 
          This is the first version, and is a work-in-progress, it will be further updated as more, major changes are made. 
