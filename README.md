@@ -11,10 +11,10 @@ This was made to further familiarize myself with the Python language and the Str
 
 # **v1.1.4 (Alpha) Proof of Concept Images:**
 
--# Apple Music Feed
+- # Apple Music Feed
 ![Screenshot 2022-11-14 182440](https://user-images.githubusercontent.com/100003892/201788907-cca9cece-38ae-4ce4-aa8c-f9549e6ad386.png)
--# iTunes Store (Music) Feed
+- # iTunes Store (Music) Feed
 ![Screenshot 2022-11-14 182508](https://user-images.githubusercontent.com/100003892/201788925-f105e61a-e424-4932-b824-f7e649969223.png)
--# Apple Podcasts Feed
+- # Apple Podcasts Feed
 ![Screenshot 2022-11-14 182527](https://user-images.githubusercontent.com/100003892/201788936-ec30cfd4-2fd1-48ef-b12a-6698aa5e35ac.png)
 
