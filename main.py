@@ -17,14 +17,9 @@ import xml.etree.ElementTree as ET
 ts = int(time.time())
 today = date.today()
 print(today)
+st.write(today)
 
 st.title('ContentCharts Web-Application')
-st.write("""You are visiting ContentCharts on: """)
-st.write(today)
-st.write("""A program that gathers various content/media platform's chart data and employs its statistics onto an easy-to-understand Streamlit webpage. 
-         You can use the program to see what content/media is currently popular on a platform. 
-         This is the first version, and is a work-in-progress, it will be further updated as more, major changes are made. 
-         ContentCharts v1.1.4 (Alpha) can run through your IDE or accessed via the streamlit webpage.""")
 
 sidebar_selection = st.sidebar.radio(
     'Select location data to display:',
@@ -54,19 +49,19 @@ sidebar_selection = st.sidebar.radio(
 
 
 rss_urls = [
-    # Apple Music US Most Played Songs
+    # AM Most Played Songs
     'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/songs.json'
-    # Apple Music US Most Played Albums
+    # AM Most Played Albums
     'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/albums.json'
-    # Apple Music US Most Played Playlists
+    # AM Most Played Playlists
     'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/playlists.json'
-    # Apple Music US Most Played Music Videos
+    # AM Most Played Music Videos
     'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/music-videos.json'
-    # iTunes Store US Most Actively Purchased Songs
+    # iTunes Store Most Actively Purchased Songs
     'https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json'
-    # iTunes Store US Most Actively Purchased Albums
+    # iTunes Store Most Actively Purchased Albums
     'https://itunes.apple.com/us/rss/topalbums/limit=100/explicit=true/json'
-    # iTunes Store US Most Actively Purchased Music Videos
+    # iTunes Store Most Actively Purchased Music Videos
     'https://itunes.apple.com/us/rss/topmusicvideos/limit=100/explicit=true/json'
 
 
@@ -132,13 +127,13 @@ playedsongs, playedalbums, playedplaylists, playedmvs = get_data()
 
 
 
-print("-----Apple Music US Charts (Top 100)-----")
+print("-----Apple Music Charts (Top 100)-----")
 print("**Top songs actively played " + str(playedsongs))
 print("**Top albums actively played " + str(playedalbums))
 print("**Top playlists actively played " + str(playedplaylists))
 print("**Top Music Videos actively played " + str(playedmvs))
 
-st.header("Apple Music US Charts (Top 100)")
+st.header("Apple Music Charts (Top 100)")
 st.subheader("**Top songs actively played** " + str(playedsongs))
 st.subheader("**Top albums actively played** " + str(playedalbums))
 st.subheader("**Top playlists actively played** " + str(playedplaylists))
@@ -159,12 +154,12 @@ def get_data():
 
 
 topsongs, topalbums, topmvs = get_data()
-print("-----iTunes Store Music US Charts (Top 100)-----")
+print("-----iTunes Store Music Charts (Top 100)-----")
 print("**Top songs actively purchased " + str(topsongs))
 print("**Top albums actively purchased " + str(topalbums))
 print("**Top Music Videos actively purchased " + str(topmvs))
 
-st.header("iTunes Store Music US Charts (Top 100)")
+st.header("iTunes Store Music Charts (Top 100)")
 st.subheader("**Top songs actively purchased** " + str(topsongs))
 st.subheader("**Top albums actively purchased** " + str(topalbums))
 st.subheader("**Top Music Videos actively purchased** " + str(topmvs))
@@ -180,11 +175,11 @@ def get_data():
     return topfree, toppaid
 
 topfree, toppaid = get_data()
-print("-----App Store US Charts (Top 100)-----")
+print("-----App Store Charts (Top 100)-----")
 print("**Top free apps actively downloaded " + str(topfree))
 print("**Top paid apps actively purchased " + str(toppaid))
 
-st.header("App Store US Charts (Top 100)")
+st.header("App Store Charts (Top 100)")
 st.subheader("**Top free apps actively downloaded** " + str(topfree))
 st.subheader("**Top paid apps actively purchased** " + str(toppaid))
 
@@ -196,12 +191,29 @@ def get_data():
 
     return topmovies
 topmovies = get_data()
-print("-----iTunes Store Movies (AppleTV) US Charts (Top 100)-----")
+print("-----iTunes Store Movies (AppleTV) Charts (Top 100)-----")
 print("**Top movies actively purchased " + str(topmovies))
 
 
-st.header("iTunes Store Movies (AppleTV) US Charts (Top 100)")
+st.header("iTunes Store Movies (AppleTV) Charts (Top 100)")
 st.subheader("**Top movies actively purchased** " + str(topmovies))
+
+def get_data():
+    Top_tvseaons = 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topTvSeasons/json'
+    toptvseasons = pd.read_json(Top_tvseaons)
+    Top_tvepisodes = 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topTvEpisodes/json'
+    toptvepisodes = pd.read_json(Top_tvepisodes)
+
+    return toptvseasons, toptvepisodes
+
+toptvseasons, toptvepisodes = get_data()
+print("-----iTunes Store TV Shows (AppleTV) Charts (Top 100)-----")
+print("**Top tv show seasons actively purchased " + str(toptvseasons))
+print("**Top tv show episodes actively purchased " + str(toptvepisodes))
+
+st.header("iTunes Store TV Shows (AppleTV) Charts (Top 100)")
+st.subheader("**Top TV seasons actively purchased** " + str(toptvseasons))
+st.subheader("**Top TV episodes actively purchased** " + str(toptvepisodes))
 
 
 # Apple Podcasts (United States)
@@ -217,12 +229,26 @@ def get_data():
     return toppodcasts, toppodeps, toppodsubs
 
 toppodcasts, toppodeps, toppodsubs = get_data()
-print("-----Apple Podcasts US Charts (Top 100)-----")
+print("-----Apple Podcasts Charts (Top 100)-----")
 print("**Top podcasts actively listened to " + str(toppodcasts))
 print("**Top podcast episodes actively listened to " + str(toppodeps))
 print("**Top podcasts actively subscribed to " + str(toppodsubs))
 
-st.header("Apple Podcasts US Charts (Top 100)")
+st.header("Apple Podcasts Charts (Top 100)")
 st.subheader("**Top podcasts actively listened to** " + str(toppodcasts))
 st.subheader("Top podcast episodes actively listened to " + str(toppodeps))
 st.subheader("Top podcasts actively subscribed to " + str(toppodsubs))
+
+# Top Audio Books on Apple Books US Charts
+def get_data():
+    Top_audbooks = 'https://rss.applemarketingtools.com/api/v2/us/podcasts/top/100/podcasts.json'
+    topaudbooks = pd.read_json(Top_audbooks)
+
+    return topaudbooks
+topaudbooks = get_data()
+
+print("-----Apple Books Audiobooks US Charts (Top 100)-----")
+print("**Top Audiobooks actively listened to " + str(topaudbooks))
+
+st.header("Apple Books Audiobooks US Charts (Top 100)")
+st.subheader("**Top Audiobooks actively listened to** " + str(topaudbooks))
