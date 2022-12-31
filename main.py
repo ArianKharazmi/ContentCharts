@@ -12,7 +12,13 @@ from pandas.io.json import json_normalize
 #import feedparser
 import xml.etree.ElementTree as ET
 
-
+st.title('ContentCharts Web-Application')
+st.write("""You are visiting ContentCharts on: """)
+st.write(today)
+st.write("""A program that gathers various content/media platform's chart data and employs its statistics onto an easy-to-understand Streamlit webpage. 
+         You can use the program to see what content/media is currently popular on a platform. 
+         This is the first version, and is a work-in-progress, it will be further updated as more, major changes are made. 
+         ContentCharts v1.1.4 (Alpha) can run through your IDE or accessed via the streamlit webpage.""")
 
 ts = int(time.time())
 today = date.today()
