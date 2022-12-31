@@ -23,7 +23,7 @@ st.write("""A program that gathers various content/media platform's chart data a
 ts = int(time.time())
 today = date.today()
 print(today)
-st.write(today)
+
 
 st.title('ContentCharts Web-Application')
 
