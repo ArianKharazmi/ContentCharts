@@ -7,7 +7,7 @@ This was made to further familiarize myself with the Python language and the Str
 *ContentCharts v1.1.6 (Alpha) can run through your IDE or accessed via the streamlit webpage.*
 
 
-# Streamlit Webpage: ---> [ContentCharts-Web-Application v1.1.4](https://ariankharazmi-contentcharts-web-application-main-mj8coh.streamlit.app/)
+# Streamlit Webpage: ---> [ContentCharts-Web-Application v1.1.6](https://ariankharazmi-contentcharts-web-application-main-mj8coh.streamlit.app/)
 
 # **v1.1.6 (Alpha) Proof of Concept Images:**
 
