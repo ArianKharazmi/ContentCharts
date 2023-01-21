@@ -31,3 +31,22 @@ playedalbums = get_data()
 
 print("-----Apple Music Charts Algeria (Top 100)-----")
 print("**Top albums actively played " + str(playedalbums))
+
+
+
+
+
+
+
+
+def get_data():
+    Played_albums ='https://rss.applemarketingtools.com/api/v2/ao/music/most-played/50/albums.json'
+    playedalbums = pd.read_json(Played_albums)
+
+    return playedalbums
+
+playedalbums = get_data()
+
+
+print("-----Apple Music Charts Angola (Top 100)-----")
+print("**Top albums actively played " + str(playedalbums))
