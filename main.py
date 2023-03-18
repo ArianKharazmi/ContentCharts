@@ -17,69 +17,70 @@ import xml.etree.ElementTree as ET
 ts = int(time.time())
 today = date.today()
 print(today)
-st.write(today)
+#st.write(today)
 
 st.title('ContentCharts Web-Application')
-st.write(today)
+st.write("""You are visiting on:    """ + str(today))
+#sidebar_selection = st.sidebar.radio(
+#    'Select location data to display:',
+#    ['Show Global', 'Show U.S', 'Show U.K', 'Show other'],
+#)
 
-sidebar_selection = st.sidebar.radio(
-    'Select location data to display:',
-    ['Show Global', 'Show U.S', 'Show U.K', 'Show other'],
-)
 
+#sidebar_selection = st.sidebar.radio(
+#    'Select music platform chart data to display:',
+#    ['Show All', 'Show Apple Music', 'Show iTunes Store (Music)', 'Show none'],
+#)
 
-sidebar_selection = st.sidebar.radio(
-    'Select music platform chart data to display:',
-    ['Show All', 'Show Apple Music', 'Show iTunes Store (Music)', 'Show none'],
-)
+#sidebar_selection = st.sidebar.radio(
+#    'Select movie platform chart data to display:',
+#    ['Show All', 'Show iTunes Store (Movies/AppleTV)', 'Show none'],
+#)
 
-sidebar_selection = st.sidebar.radio(
-    'Select movie platform chart data to display:',
-    ['Show All', 'Show iTunes Store (Movies/AppleTV)', 'Show none'],
-)
+#sidebar_selection = st.sidebar.radio(
+#    'Select podcast platform chart data to display:',
+#    ['Show All', 'Show Apple Podcasts', 'Show none'],
+#)
 
-sidebar_selection = st.sidebar.radio(
-    'Select podcast platform chart data to display:',
-    ['Show All', 'Show Apple Podcasts', 'Show none'],
-)
-
-sidebar_selection = st.sidebar.radio(
-    'Select app platform chart data to display:',
-    ['Show All', 'Show App Store', 'Show none'],
-)
+#sidebar_selection = st.sidebar.radio(
+#    'Select app platform chart data to display:',
+#    ['Show All', 'Show App Store', 'Show none'],
+#)
 
 
 rss_urls = [
     # AM Most Played Songs
-    'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/songs.json'
+    'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/songs.json',
     # AM Most Played Albums
-    'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/albums.json'
+    'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/albums.json',
     # AM Most Played Playlists
-    'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/playlists.json'
+    'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/playlists.json',
     # AM Most Played Music Videos
-    'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/music-videos.json'
-    # iTunes Store Most Actively Purchased Songs
-    'https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json'
-    # iTunes Store Most Actively Purchased Albums
-    'https://itunes.apple.com/us/rss/topalbums/limit=100/explicit=true/json'
-    # iTunes Store Most Actively Purchased Music Videos
+    'https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/music-videos.json',
+    # iTunes Most Actively Bought Songs
+    'https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json',
+    # iTunes Most Actively Bought Albums
+    'https://itunes.apple.com/us/rss/topalbums/limit=100/explicit=true/json',
+    # iTunes Most Actively Bought Music Videos
     'https://itunes.apple.com/us/rss/topmusicvideos/limit=100/explicit=true/json'
-
-
-
 ]
 
-base_url = 'https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json'
-list(requests.get(base_url).json())
-
-dta_=[]
-for i in requests.get(base_url).json()['feed']:
-    dta_.append(i)
-
-df_=pd.DataFrame(dta_)
-df_.head()
 
 
+
+#data = []
+#for url in rss_urls:
+#    response = requests.get(url).json()
+#    entries = response['feed']['results']
+#    for results in rss_urls:
+#        data.append({
+#            'type': results['contentType']['attributes']['label'],
+#            'title': results['title']['label'],
+#            'artist': results['im:artist']['label'],
+#            'release_date': results['im:releaseDate']['label'],
+#            'price': results.get('im:price', {}).get('label', ''),
+#            'link': results['link']['attributes']['href']
+#        })
 
 #for url in rss_urls:
     #response = requests.get(url)
@@ -87,22 +88,6 @@ df_.head()
 
     #for item in root.iter('title'):
         #print(item.find('title').text)
-
-
-
-
-#f = feedparser.parse("https://rss.applemarketingtools.com/api/v2/us/music/most-played/100/songs.json")
-#f.keys()
-#f.headers
-#f.feed
-#f.entries
-#len(f.entries)
-#for entry in f.entries:
-    #print(entry.title)
-
-#for entry in f.entries:
-    #print("artistName".entry.title)
-#f.entries[0]
 
 
 #sidebar_selection = st.sidebar.radio(
@@ -125,7 +110,6 @@ def get_data():
     return playedsongs, playedalbums, playedplaylists, playedmvs
 
 playedsongs, playedalbums, playedplaylists, playedmvs = get_data()
-
 
 
 print("-----Apple Music Charts (Top 100)-----")
@@ -199,23 +183,6 @@ print("**Top movies actively purchased " + str(topmovies))
 st.header("iTunes Store Movies (AppleTV) Charts (Top 100)")
 st.subheader("**Top movies actively purchased** " + str(topmovies))
 
-def get_data():
-    Top_tvseaons = 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topTvSeasons/json'
-    toptvseasons = pd.read_json(Top_tvseaons)
-    Top_tvepisodes = 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topTvEpisodes/json'
-    toptvepisodes = pd.read_json(Top_tvepisodes)
-
-    return toptvseasons, toptvepisodes
-
-toptvseasons, toptvepisodes = get_data()
-print("-----iTunes Store TV Shows (AppleTV) Charts (Top 100)-----")
-print("**Top tv show seasons actively purchased " + str(toptvseasons))
-print("**Top tv show episodes actively purchased " + str(toptvepisodes))
-
-st.header("iTunes Store TV Shows (AppleTV) Charts (Top 100)")
-st.subheader("**Top TV seasons actively purchased** " + str(toptvseasons))
-st.subheader("**Top TV episodes actively purchased** " + str(toptvepisodes))
-
 
 # Apple Podcasts (United States)
 def get_data():
@@ -235,21 +202,10 @@ print("**Top podcasts actively listened to " + str(toppodcasts))
 print("**Top podcast episodes actively listened to " + str(toppodeps))
 print("**Top podcasts actively subscribed to " + str(toppodsubs))
 
+
+
 st.header("Apple Podcasts Charts (Top 100)")
 st.subheader("**Top podcasts actively listened to** " + str(toppodcasts))
 st.subheader("Top podcast episodes actively listened to " + str(toppodeps))
 st.subheader("Top podcasts actively subscribed to " + str(toppodsubs))
 
-# Top Audio Books on Apple Books US Charts
-def get_data():
-    Top_audbooks = 'https://rss.applemarketingtools.com/api/v2/us/podcasts/top/100/podcasts.json'
-    topaudbooks = pd.read_json(Top_audbooks)
-
-    return topaudbooks
-topaudbooks = get_data()
-
-print("-----Apple Books Audiobooks US Charts (Top 100)-----")
-print("**Top Audiobooks actively listened to " + str(topaudbooks))
-
-st.header("Apple Books Audiobooks US Charts (Top 100)")
-st.subheader("**Top Audiobooks actively listened to** " + str(topaudbooks))
