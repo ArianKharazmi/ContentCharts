@@ -6,7 +6,7 @@ This was made to further familiarize myself with the Python language and the Str
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/ariankharazmi/ContentCharts-Web-Application)
 
-*ContentCharts v1.1.7 (Beta) can run through your IDE or accessed via the streamlit webpage.*
+* **ContentCharts v1.1.7 (Beta) can run through your IDE or accessed via the streamlit webpage.**
 
 
 # Streamlit Webpage: ---> [ContentCharts-Web-Application v1.1.7](https://ariankharazmi-contentcharts-web-application-main-mj8coh.streamlit.app/)
