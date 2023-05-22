@@ -8,7 +8,7 @@ import streamlit as st
 import base64
 import json
 import pandas as pd
-from pandas.json_normalize import json_normalize
+#from pandas.json_normalize import json_normalize # Will return with more documentation
 #import feedparser
 import xml.etree.ElementTree as ET
 
