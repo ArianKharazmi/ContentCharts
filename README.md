@@ -1,15 +1,15 @@
 # ContentCharts v1.1.7 (Beta) 
-A program that gathers various content/media platform's chart data and employs its statistics onto an easy-to-understand Streamlit webpage. 
+A program that gathers various content/media platform chart data and employs its statistics onto an easy-to-understand Streamlit webpage. 
 You can use the program to see what content/media is currently popular on a platform.
-This is the first version, and is a work-in-progress, it will be further updated as more, major changes are made.
+This is the first version and is a work in progress, it will be further updated as more, major changes are made.
 This was made to further familiarize myself with the Python language and the Streamlit service. 
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/ariankharazmi/ContentCharts-Web-Application)
 
-* **ContentCharts v1.1.7 (Beta) can run through your IDE or accessed via the streamlit webpage.**
+* **ContentCharts v1.1.7 (Beta) can run through your IDE or can be accessed via the streamlit webpage.**
 
 
-# Streamlit Webpage: ---> [ContentCharts-Web-Application v1.1.7](https://ariankharazmi-contentcharts-web-application-main-6uvc8t.streamlit.app/)
+# Streamlit Webpage: ---> [ContentCharts-Web-Application v1.1.7](https://ariankharazmi-contentcharts-web-application.streamlit.app/)
 
 # **v1.1.7 (Beta) Proof of Concept Images:**
 
